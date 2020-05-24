@@ -4,9 +4,9 @@ import "fmt"
 
 type deck []string 
 
-func (cards deck) print() {
+func (d deck) print() {
 
-	for i, card := range cards {
+	for i, card := range d {
 		
 		fmt.Println(i, card)
 	}
