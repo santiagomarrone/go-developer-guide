@@ -4,6 +4,6 @@ import "fmt"
 
 func main() {
 
-	card := "Ace de Spades"
+	card := "Ace of Spades"
 	fmt.Println(card)
 }
