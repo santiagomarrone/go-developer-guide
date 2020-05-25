@@ -23,8 +23,8 @@ func newDeck() deck {
 
 func (d deck) print() {
 
-	for i, card := range d {
+	for _, card := range d {
 		
-		fmt.Println(i, card)
+		fmt.Println(card)
 	}
 }
