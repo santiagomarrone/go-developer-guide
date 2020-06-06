@@ -4,6 +4,7 @@ import(
 
 	"fmt"
 	"io/ioutil"
+	"os"
 	"strings"
 )
 
@@ -24,6 +25,21 @@ func newDeck() deck {
 	}
 
 	return d
+}
+
+func newDeckFromFile(file string) deck {
+
+	content, err := ioutil.ReadFile(file)
+
+	if err != nil {
+
+		fmt.Println("ERROR:", err)
+		os.Exit(1)
+	}
+	
+	s := strings.Split(string(content),",")
+	
+	return deck(s)
 }
 
 func (d deck) print() {
