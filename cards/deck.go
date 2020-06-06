@@ -4,6 +4,7 @@ import(
 
 	"fmt"
 	"io/ioutil"
+	"math/rand"
 	"os"
 	"strings"
 )
@@ -53,6 +54,16 @@ func (d deck) print() {
 func deal(d deck, handSize int) (deck, deck) {
 
 	return d[:handSize], d[handSize:]
+}
+
+func (d deck) shuffle() {
+
+	for i := range d {
+
+		n := rand.Intn(len(d) - 1) 
+
+		d[i], d[n] = d[n], d[i]
+	}
 }
 
 func (d deck) toString() string {
